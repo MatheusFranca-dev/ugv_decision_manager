@@ -1,21 +1,27 @@
 <launch>
-    <!--
-      Sensor Test Publisher
-      This node publishes simulated sensor data for testing the behavior tree.
-      You can change the test scenario by modifying the 'test_scenario' parameter.
+  <!--
+    Sensor Test Publisher
+    This node publishes simulated sensor data for testing the behavior tree.
+    You can change the test scenario by modifying the 'test_scenario' parameter.
 
-      Available Scenarios:
-      1: All Safe - All sensors publish nominal, safe values continuously.
-      2: E-Stop Fault - Simulates a temporary emergency stop activation.
-      3: Low Battery Fault - Simulates a temporary low battery condition.
-      4: High Temperature Fault - Simulates a temporary overheating condition.
-      5: Bad GPS Fault - Simulates a temporary loss of GPS accuracy.
-      6: High Crosstrack Error Fault - Simulates the vehicle deviating from its path.
-      7: No Internet Fault - Simulates a temporary loss of internet connection.
-      8: Low Internet Signal - Simulates a temporary low signal internet connection.
-    -->
-    <node name="mock_sensors_publisher" pkg="ugv_bt_manager" type="mock_sensors_pub_node" output="screen">
-        <param name="test_scenario" type="int" value="1" />
-    </node>
+    Available Scenarios:
+    1: All Safe - All sensors publish nominal, safe values continuously.
+    2: E-Stop Fault - Simulates a temporary emergency stop activation.
+    3: Low Battery Fault - Simulates a temporary low battery condition.
+    4: High Temperature Fault - Simulates a temporary overheating condition.
+    5: Bad GPS Fault - Simulates a temporary loss of GPS accuracy.
+    6: High Crosstrack Error Fault - Simulates the vehicle deviating from its path.
+    7: No Internet Fault - Simulates a temporary loss of internet connection.
+    8: Low Internet Signal - Simulates a temporary low signal internet connection.
+  -->
+  <arg name="test_scenario" default="1"
+       doc="Which fault scenario to run (1–8)"/>
+
+  <node pkg="ugv_bt_manager"
+        type="mock_sensors_pub_node"
+        name="mock_sensors_publisher"
+        output="screen">
+    <param name="test_scenario" value="$(arg test_scenario)" />
+  </node>
 
 </launch>

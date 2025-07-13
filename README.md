@@ -53,12 +53,14 @@ docker exec -it ugv_decision_manager /bin/bash
 - **Behavior Tree and Sensor Simulation**:
 
 ```bash
+. devel/setup.bash
 roslaunch ugv_bt_manager ugv_bringup.launch
 ```
 
 - **Mock Sensors Publisher**:
 
 ```bash
+. devel/setup.bash
 roslaunch ugv_bt_manager mock_sensors_pub.launch test_scenario:=1
 ```
 
@@ -120,6 +122,23 @@ During development, some challenges were encountered:
 - **Recovery from Error States**: The system exhibited quick recovery capabilities, typically restoring normal operation within ~1 second after the resolution of sensor-triggered errors, thus ensuring minimal operational downtime.
 
 These analyses confirm that the `ugv_decision_manager` maintains reliable performance across critical operational scenarios, aligning with safety and efficiency objectives.
+
+## Known Issues
+
+### Qt/X11 Display Error
+
+Inside the container, you may see errors like:
+
+```bash
+Authorization required, but no authorization protocol specified
+qt.qpa.xcb: could not connect to display :1
+```
+
+**Workaround**: Run the xhost +local:docker command on your host machine (not inside Docker) before starting the container:
+
+```bash
+xhost +local:docker
+```
 
 ## References
 
