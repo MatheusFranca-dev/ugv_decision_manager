@@ -1,0 +1,13 @@
+<launch>
+
+  <include file="$(find gem_gazebo)/launch/gem_gazebo_rviz.launch">
+    <arg name="velodyne_points" value="true"/>
+  </include>
+
+  <node name="pure_pursuit_action" pkg="ugv_pure_pursuit_controller" type="pure_pursuit_action.py" output="screen"/>
+
+  <node name="groot_editor" pkg="groot" type="Groot" />
+
+  <include file="$(find ugv_bt_manager)/launch/behavior_tree.launch" />
+
+</launch>

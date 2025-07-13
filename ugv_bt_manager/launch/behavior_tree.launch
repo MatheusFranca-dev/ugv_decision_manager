@@ -1,0 +1,13 @@
+<launch>
+
+  <node name="bt_manager" pkg="ugv_bt_manager" type="behavior_tree_manager_node" clear_params="true">
+    <param name="capability_group" value="bt"/>
+
+    <!-- load behavior tree file -->
+    <param name="tree/static_file" value="$(find ugv_bt_manager)/behavior_trees/ugv_decision_making_tree.xml"/>
+
+    <!-- load behavior tree parameters -->
+    <rosparam command="load" file="$(find ugv_bt_manager)/config/bt_default.yaml" />
+  </node>
+
+</launch>

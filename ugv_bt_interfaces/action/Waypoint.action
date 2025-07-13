@@ -1,0 +1,8 @@
+# Goal
+ugv_bt_interfaces/Waypoint[] waypoints
+---
+# Result
+bool success
+---
+# Feedback
+uint32 current_index

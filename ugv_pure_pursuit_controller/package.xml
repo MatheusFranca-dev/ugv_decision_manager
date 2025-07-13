@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+ <name>ugv_pure_pursuit_controller</name>
+ <version>0.0.1</version>
+ <description> The ugv_pure_pursuit_controller package is a updated version of the POLARIS_GEM_e2 pure pursuit controller with a ros action interface</description>
+
+ <author email="br_matheus@hotmail.com">Matheus França</author>
+ <maintainer email="br_matheus@hotmail.com">Matheus França</maintainer>
+
+ <license>MIT License</license>
+
+ <buildtool_depend>catkin</buildtool_depend>
+
+ <build_depend>roslint</build_depend>
+
+ <depend>cv_bridge</depend>
+ <depend>roscpp</depend>
+ <depend>rospy</depend>
+ <depend>sensor_msgs</depend>
+ <depend>std_msgs</depend>
+ <depend>geometry_msgs</depend>
+ <depend>ackermann_msgs</depend>
+ <depend>nav_msgs</depend>
+ <depend>visualization_msgs</depend>
+ <depend>ugv_bt_interfaces</depend>
+
+ <!-- The export tag contains other, unspecified, tags -->
+ <export>
+ </export>
+</package>

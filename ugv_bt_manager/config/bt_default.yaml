@@ -1,0 +1,19 @@
+tree:
+  static_xml: ""
+  rate : 2.0
+  start_tree_at_init: True
+
+logging:
+  StdCoutLogger:
+    enabled: false
+  PublisherZMQ:
+    enabled: true
+    max_msg_per_second: 25
+    publisher_port: 1666
+    server_port: 1667
+  FileLogger:
+    enabled: false
+    file_path: "bt_trace.fbl"
+  MinitraceLogger:
+    enabled: false
+    file_path: "bt_trace.json"
