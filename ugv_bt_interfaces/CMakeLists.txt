@@ -15,6 +15,7 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
     Waypoint.msg
+    BTStatus.msg
 )
 
 ## Generate services in the 'action' folder
