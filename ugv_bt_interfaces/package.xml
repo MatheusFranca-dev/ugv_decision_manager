@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<package format="2">
+  <name>ugv_bt_interfaces</name>
+  <version>0.0.1</version>
+  <description>Interfaces used for ugv decision manager</description>
+
+  <author email="br_matheus@hotmail.com">Matheus França</author>
+  <maintainer email="br_matheus@hotmail.com">Matheus França</maintainer>
+
+  <license>MIT License</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>message_generation</depend>
+  <depend>actionlib_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_runtime</depend>
+  <depend>actionlib</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>

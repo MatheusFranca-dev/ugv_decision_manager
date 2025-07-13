@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>ugv_bt_manager</name>
+  <version>0.0.1</version>
+  <description>The ugv_bt_manager package that handles the decision-making algorithms</description>
+
+  <author email="br_matheus@hotmail.com">Matheus França</author>
+  <maintainer email="br_matheus@hotmail.com">Matheus França</maintainer>
+
+  <license>MIT License</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>roscpp</depend>
+  <depend>rospy</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>nav_msgs</depend>
+  <depend>behaviortree_cpp_v3</depend>
+  <depend>tf</depend>
+  <depend>topic_tools</depend>
+  <depend>tf2_ros</depend>
+  <depend>ugv_bt_interfaces</depend>
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>

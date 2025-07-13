@@ -1,0 +1,29 @@
+<root main_tree_to_execute="BehaviorTree">
+  <BehaviorTree ID="BehaviorTree">
+    <Sequence name="TopLevelSequence">
+      <BoolCondition name="emergency_stop" topic_in="estop"/>
+      <ReactiveSequence name="MainSequence">
+        <BoolCondition name="emergency_stop" topic_in="estop"/>
+        <IntCondition name="internet_connection" topic_in="internet_signal"
+                      timeout_unconnected="10" timeout_low="20"/>
+        <FloatCondition name="battery_level" topic_in="battery_level"
+                        threshold="50" timeout="0" trigger_above="false"/>
+        <FloatCondition name="temperature" topic_in="temperature" threshold="55"
+                        timeout="0" trigger_above="true"/>
+        <FloatCondition name="gps_accuracy" topic_in="gps_accuracy" threshold="200"
+                        timeout="15" trigger_above="false"/>
+        <!-- ========== NOT NECESSARY - JUST TO SHOW USAGE OF MORE PLUGINS ========== -->
+        <Fallback>
+          <FloatCondition name="crosstrack_error" topic_in="crosstrack_err"
+                          threshold="1.0" timeout="0" trigger_above="true"/>
+          <ForceFailure>
+              <StopAction name="stop_robot" topic_out="gem/ackermann_cmd"/>
+          </ForceFailure>
+        </Fallback>
+        <!-- ======================================================================== -->
+        <ActionWaypointClient name="ProcessWaypoints" action_name="/waypoint_action"
+                              waypoints_file="config/waypoints.csv"/>
+      </ReactiveSequence>
+    </Sequence>
+  </BehaviorTree>
+</root>
