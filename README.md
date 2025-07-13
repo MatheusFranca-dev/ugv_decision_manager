@@ -44,6 +44,10 @@ docker run --name ugv_decision_manager \
     -it ugv_decision_manager:latest
 ```
 
+```bash
+docker exec -it ugv_decision_manager /bin/bash
+```
+
 ## Running the System
 
 - **Behavior Tree and Sensor Simulation**:
